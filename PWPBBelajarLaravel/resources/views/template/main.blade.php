@@ -171,8 +171,8 @@
       @endif
       <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="kategori" onclick="playAudio4()">
         <option selected value="null">--Pilih--</option>
-        <option class="text-center" value="siswa">Siswa</option>
-        <option class="text-center" value="kelas">Kelas</option>
+        <option class="text-center" value="siswa" {{ @$_GET[kategori]=="siswa"?"selected" : "" }}>Siswa</option>
+        <option class="text-center" value="kelas" {{ @$_GET[kategori]=="kelas"?"selected" : "" }}>Kelas</option>
       </select>
       <input class="form-control mr-sm-1 my-2" type="search" placeholder="Search" value="{{ @$_GET[query] }}" aria-label="Search" name="query">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
