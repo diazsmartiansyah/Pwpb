@@ -152,6 +152,9 @@
           transition:1.5s;
         }
         
+        hr{
+            border: 1px solid black;
+        }
       </style>
     </head>
     <body>
