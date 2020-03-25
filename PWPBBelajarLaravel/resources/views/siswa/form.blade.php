@@ -58,7 +58,8 @@ input:hover, select:hover{
     <h1><i class="fas fa-plus-circle mx-2"></i>ADD DATA &emsp; &emsp; &emsp; &emsp; &emsp;<img onmouseover="playAudio6()" onmouseleave="playAudio6()" width="60px;" class="img" src="{{ asset('img/d.png') }}" alt=""></h1>
 </div>
 
-<form class="col-md-5 p-5 pt-2 bg" action="{{ url('siswa',@$siswa->id) }}" method="post"> 
+<form action="{{ url('siswa',@$siswa->id) }}" method="post">
+  <div class="col-md-5 pl-3 p-5 pt-2 bg">
     @csrf
 
     @if(!empty($siswa))
@@ -119,6 +120,7 @@ input:hover, select:hover{
         <button type="submit" class="btn btn-primary" onclick="playAudio2()">Simpan</button>
     </div>
   </div>
+  </div
 </form>
 </center>
 @endsection
