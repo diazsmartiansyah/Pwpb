@@ -30,8 +30,9 @@
 	</style>
 @section('title','dashboard')
 @section('container')
-<div class="col-md-10 mx-4">
-    <h2><i class="fas fa-chart-pie mr-2"></i>DASHBOARD</h2><hr class="mr-1 bg-dark">
+<div class="col-md-10 ">
+    <h2><i class="fas fa-chart-pie mr-2"></i>DASHBOARD</h2>
+	<hr class=" bg-dark" />
 	<div class="row">
 	
 	

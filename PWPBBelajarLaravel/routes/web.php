@@ -1,7 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +43,26 @@ Route::get('/search',function(){
     
 });
 
+Route::post('/gupdate',function(Request $request){
+    
+    $saya = new Controller();
+    $rule = [
+        'email' => 'required|email'
+    ];
+    
+    $saya->validate($request,$rule);
+    $input = $request->all();
+    unset($input['_token']);
+    $status = \DB::table('t_gupdate')->insert($input);
+
+    if($status){
+        return redirect(url()->previous())->with('success','Stay Tuned Dengan Update Terbaru Saya');
+    }else{
+        return redirect(url()->previous())->with('error','Terjadi Kesalahan');
+    }
+
+});
+
 Route::get('/siswa','SiswaController@index');
 
 Route::get('/siswa/create','SiswaController@create');
@@ -63,3 +86,5 @@ Route::get('/kelas/{id}/edit','KelasController@edit');
 Route::patch('/kelas/{id}','KelasController@update');
 
 Route::delete('/kelas/{id}','KelasController@destroy');
+
+?>

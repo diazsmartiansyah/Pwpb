@@ -58,7 +58,13 @@
 
 <div class="container">
     <div class="d-flex justify-content-center" >
-        <div class="btn btn-success text-center mb-3" onclick="playAudio2()">
+    <div class="pos-f-t mb-2">
+        <div class="collapse text-center" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h5 class="text-white h4">Pilih Aksi</h5>
+            </div>
+    
+        <div class="btn btn-success text-center my-3 mx-3" onclick="playAudio2()">
             <a href="{{ url('/kelas/create') }}" class="text-decoration-none">
                 <h2>
                     <i class="fas fa-plus-circle mx-2 text-white"></i><font class="mr-2 text-white">ADD</font>
@@ -66,7 +72,7 @@
             </a>
         </div>
 
-        <div class="btn btn-success text-center mb-3 ml-5" onclick="playAudio2()">
+        <div class="btn btn-success text-center my-3 mx-3" onclick="playAudio2()">
             <a href="{{ url('/kelas/create') }}" class="text-decoration-none">
                 <h2>
                 <i class="fas fa-sort-alpha-down mx-2 text-white"></i><font class="mr-2 text-white">ASC</font>
@@ -74,7 +80,7 @@
             </a>
         </div>
 
-        <div class="btn btn-success text-center mb-3 mx-5" onclick="playAudio2()">
+        <div class="btn btn-success text-center my-3 mx-3" onclick="playAudio2()">
             <a href="{{ url('/kelas/create') }}" class="text-decoration-none">
                 <h2>
                 <i class="fas fa-sort-alpha-up mx-2 text-white"></i><font class="mr-2 text-white">DESC</font>
@@ -82,13 +88,22 @@
             </a>
         </div>
 
-        <div class="btn btn-success text-center mb-3 right" onclick="playAudio2()">
+        <div class="btn btn-success text-center my-3 mx-3" onclick="playAudio2()">
             <a href="{{ url('kelas') }}" class="text-decoration-none">
                 <h2>
                     <i class="far fa-eye mr-2 text-white"></i><font class="text-white">SHOW</font>
                 </h2>
             </a>
         </div>
+
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fas fa-bars" id="btnController"></span>
+            </button>
+        </nav>
+    </div>
+
     </div>
     <div class="table-responsive">
         <table class="table table-hover text-center my-2 " border="3">
