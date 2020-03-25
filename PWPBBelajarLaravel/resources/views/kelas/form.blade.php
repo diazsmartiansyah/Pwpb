@@ -5,7 +5,7 @@
 .bg{
     background: rgba(211,211,211,0.4);
     position:absolute;
-    height:85%;
+    height:100%;
 }
 .dark{
   background: rgba(52, 58, 64,0.6);
@@ -32,6 +32,8 @@ input:hover, select:hover{
 </style>
 
 @section('container')
+<center>
+
 
 @if(session('error'))
 <div class="alert alert-error col-md-3 mx-5 text-wrap">
@@ -51,35 +53,37 @@ input:hover, select:hover{
 </div>
 @endif
 
-<div class="mx-3 mt-3 dark col-md-5 py-3">
+<div class="mt-3 dark col-md-5 py-3">
     <h1><i class="fas fa-plus-circle mx-2"></i>ADD DATA &emsp; &emsp; &emsp; &emsp; &emsp;<img onmouseover="playAudio6()" onmouseleave="playAudio6()" width="60px;" class="img" src="{{ asset('img/d.png') }}" alt=""></h1>
 </div>
 
-<form class="col-md-5 mx-3 p-5 pt-2 bg" action="{{ url('kelas',@$kelas->id) }}" method="post"> 
+<form action="{{ url('kelas',@$kelas->id) }}" method="post">
+  <div class="col-md-5 pl-3 p-5 pt-2 bg">
+ 
     @csrf
 
     @if(!empty($kelas))
       @method('PATCH')
     @endif
-  <div class="form-group row">
+  <div class="form-group row text-left">
     <label for="nama_kelas" class="col-sm-3 col-form-label"><i class="fas fa-id-card mr-2"></i>Nama Kelas</label>
     <div class="col-sm-10">
       <input type="text" onmouseover="playAudio1()" class="form-control" id="nama_kelas" name="nama_kelas" value="{{ old('nama_kelas',@$kelas->nama_kelas) }}">
     </div>
   </div>
-  <div class="form-group row">
-    <label for="ruangan" class="col-sm-4 col-form-label" ><i class="fas fa-id-card mr-2"></i>Ruangan</label>
+  <div class="form-group row text-left">
+    <label for="ruangan" class="col-sm-3 col-form-label" ><i class="fas fa-id-card mr-2"></i>Ruangan</label>
     <div class="col-sm-10">
       <input type="text" onmouseover="playAudio1()" class="form-control" id="ruangan" name="lokasi_ruangan" value="{{ old('lokasi_ruangan',@$kelas->lokasi_ruangan) }}">
     </div>
   </div>
-  <div class="form-group row">
-    <label for="walikelas" class="col-sm-4 col-form-label" ><i class="fas fa-id-card mr-2"></i>Wali Kelas</label>
+  <div class="form-group row text-left">
+    <label for="walikelas" class="col-sm-3 col-form-label" ><i class="fas fa-id-card mr-2"></i>Wali Kelas</label>
     <div class="col-sm-10">
       <input type="text" onmouseover="playAudio1()" class="form-control" id="walikelas" name="nama_wali_kelas" value="{{ old('ruangan',@$kelas->nama_wali_kelas) }}">
     </div>
   </div>
-  <fieldset class="form-group">
+  <fieldset class="form-group text-left">
     <div class="row">
       <legend class="col-form-label col-sm-4 pt-0"><i class="fas fa-icons mr-2"></i>Jurusan</legend>
       <div class="col-sm-10">
@@ -123,11 +127,14 @@ input:hover, select:hover{
     </div>
   </fieldset>
   
-  <div class="form-group row my-3">
+  <div class="form-group row my-3 text-left">
     <div class="col-sm-10 mb-2">
         <a href="{{ url()->previous() }}"><div class="btn btn-danger" onclick="playAudio2()">Kembali</div></a>
         <button type="submit" onclick="playAudio2()" class="btn btn-primary">Simpan</button>
     </div>
   </div>
+   
+  </div>
 </form>
+</center>
 @endsection

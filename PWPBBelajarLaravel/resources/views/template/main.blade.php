@@ -19,7 +19,7 @@
       
       
       <style>
-        .alert{
+        .alrt{
           background:none;
           border-color: red;
         }
@@ -209,7 +209,7 @@
       @if(session('errCat'))
       <center>
           <h4>
-              <div class="mt-2 alert alert-danger col-md-2">
+              <div class="mt-2 alrt alert alert-danger col-md-2">
                   {{ session('errCat') }}
               </div>
           </h4>
@@ -298,7 +298,7 @@
           </div>
 
         </div>
-          <div class="right-col ">
+          <div class="right-col">
             <h1 style="font-size: 32px;">My New Update</h1>
             <hr>
             <p>Enter Your Email To Get New Updates.</p>

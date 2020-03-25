@@ -32,6 +32,8 @@ input:hover, select:hover{
 </style>
 
 @section('container')
+<center>
+
 
 @if(session('error'))
 <div class="alert alert-error col-md-3 mx-5 text-wrap">
@@ -52,29 +54,29 @@ input:hover, select:hover{
 </div>
 @endif
 
-<div class="mx-3 mt-3 dark col-md-5 py-3">
+<div class="mt-3 dark col-md-5 py-3">
     <h1><i class="fas fa-plus-circle mx-2"></i>ADD DATA &emsp; &emsp; &emsp; &emsp; &emsp;<img onmouseover="playAudio6()" onmouseleave="playAudio6()" width="60px;" class="img" src="{{ asset('img/d.png') }}" alt=""></h1>
 </div>
 
-<form class="col-md-5 mx-3 p-5 pt-2 bg" action="{{ url('siswa',@$siswa->id) }}" method="post"> 
+<form class="col-md-5 p-5 pt-2 bg" action="{{ url('siswa',@$siswa->id) }}" method="post"> 
     @csrf
 
     @if(!empty($siswa))
       @method('PATCH')
     @endif
   <div class="form-group row">
-    <label for="nis" class="col-sm-3 col-form-label"><i class="fas fa-id-card mr-2"></i>NIS</label>
+    <label for="nis" class="col-sm-3 col-form-label text-left"><i class="fas fa-id-card mr-2"></i>NIS</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="nis" name="nis" value="{{ old('nis', @$siswa->nis) }}" {{ !empty($siswa->nis)?"readonly":"" }} onmouseover="playAudio1()">
     </div>
   </div>
   <div class="form-group row">
-    <label for="nama" class="col-sm-4 col-form-label" ><i class="fas fa-id-card mr-2"></i>Nama Lengkap</label>
+    <label for="nama" class="col-sm-4 col-form-label text-left" ><i class="fas fa-id-card mr-2"></i>Nama Lengkap</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="nama" name="namalengkap" value="{{ old('namalengkap', @$siswa->namalengkap) }}" onmouseover="playAudio1()">
     </div>
   </div>
-  <fieldset class="form-group">
+  <fieldset class="form-group text-left">
     <div class="row">
       <legend class="col-form-label col-sm-4 pt-0"><i class="fas fa-mars mr-2"></i>Jenis Kelamin</legend>
       <div class="col-sm-10">
@@ -94,7 +96,7 @@ input:hover, select:hover{
     </div>
   </fieldset>
 
-  <div class="col-sm-6 form-group row align-items-center">
+  <div class="form-group row align-items-left ">
     <div class="col-auto my-1">
       <div>
         <label for="customControlAutosizing"><i class="fas fa-briefcase-medical mr-2"></i>Golongan Darah</label>
@@ -111,11 +113,12 @@ input:hover, select:hover{
     </div>
   </div>
   
-  <div class="form-group row my-3">
+  <div class="form-group row my-5 text-left">
     <div class="col-sm-10 mb-2">
         <a href="{{ url()->previous() }}"><div class="btn btn-danger" onclick="playAudio2()">Kembali</div></a>
         <button type="submit" class="btn btn-primary" onclick="playAudio2()">Simpan</button>
     </div>
   </div>
 </form>
+</center>
 @endsection

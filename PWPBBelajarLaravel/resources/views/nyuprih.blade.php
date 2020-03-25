@@ -27,7 +27,7 @@
 @if(session('success'))
 <h5>
 <center>
-    <div class="alert alert-success col-md-3 mx-5 text-wrap">
+    <div class="alert alert-success col-md-3 text-wrap">
         {{ session('success') }} <i class="ml-1 fas fa-check"></i>
     </div>
 </center>
@@ -37,7 +37,7 @@
 @if(session('error'))
 <h5>
 <center>
-    <div class="alert alert-error col-md-3 mx-5 text-wrap">
+    <div class="alert alert-error col-md-3 text-wrap">
         {{ session('error') }} <i class="ml-1 fas fa-times"></i>
     </div>
 </center>

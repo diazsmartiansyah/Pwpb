@@ -27,7 +27,7 @@
     		opacity: 0.4;
     		font-size: 80px;
     	}
-		p{
+		.det{
 			color: darkgray;
 			text-decoration-color: black;
 			transition:1.5s;
